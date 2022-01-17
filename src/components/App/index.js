@@ -1,11 +1,16 @@
-import MainContents from "../MainContents";
+
 import "./App.css";
+import Navbar from "../Navbar/index";
+import MainContents from "../MainContents";
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Navbar />
+      <div className="App">Welcome!</div>
       <MainContents />
-    </div>
+    </>
+
   );
 }
 
