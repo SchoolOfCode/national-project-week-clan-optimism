@@ -1,8 +1,12 @@
-import './App.css';
+import "./App.css";
+import Navbar from "../Navbar/index";
 
 function App() {
   return (
-    <div className="App">Welcome!</div>
+    <>
+      <Navbar />
+      <div className="App">Welcome!</div>
+    </>
   );
 }
 

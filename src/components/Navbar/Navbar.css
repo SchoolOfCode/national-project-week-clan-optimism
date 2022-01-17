@@ -1,0 +1,36 @@
+/* responsive design
+  mobile dimensions: 482x800
+} */
+
+nav > p {
+  display: inline;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  color: black;
+  font-weight: 600;
+  font-size: 1.3em;
+  letter-spacing: 0.7px;
+}
+
+nav {
+  margin-bottom: 2em;
+  height: 40px;
+  background-color: rgb(88, 155, 215);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.logo {
+  width: 10%;
+  padding-top: 2px;
+}
+
+.logo-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
