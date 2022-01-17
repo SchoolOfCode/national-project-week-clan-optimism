@@ -1,8 +1,7 @@
 .body {
-  background-color: #333333;
+  background-color: lightgray;
 }
 
-.calendar-placement {
-  display: flex;
-  padding-left: 70px;
+.body > * {
+  padding: 10px;
 }
