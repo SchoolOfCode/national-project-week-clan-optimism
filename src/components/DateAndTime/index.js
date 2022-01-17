@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function DatenTime() {
+export default function DateAndTime() {
   var today = new Date();
   var date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();

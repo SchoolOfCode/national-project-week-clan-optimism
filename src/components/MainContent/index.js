@@ -1,15 +1,15 @@
 import React from "react";
 
-import DatenTime from "../DateNTime";
+import DateAndTime from "../DateAndTime";
 import MyCalendar from "../MyCalendar";
-import "./mainContents.css";
+import "./mainContent.css";
 
-export default function MainContents() {
+export default function MainContent() {
   return (
     <section className="body">
       <h1>Clan Optimist's Event App</h1>
       <h2>next event</h2>
-      <DatenTime />
+      <DateAndTime />
       <section className="calendar-placement">
         <MyCalendar />
       </section>
