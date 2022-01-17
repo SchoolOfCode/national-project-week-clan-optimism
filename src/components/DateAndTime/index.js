@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 
 export default function DateAndTime() {
-  var today = new Date();
-  var date =
-    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  var time =
-    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
   const [dateTime, setDateTime] = useState({});
 
   setInterval(() => {
-    time =
-      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    let datetimee = { date: date, time: time };
-    setDateTime(datetimee);
+    const today = new Date();
+    const date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const dateTimeObj = { date: date, time: time };
+    
+    setDateTime(dateTimeObj);
   }, 1000);
 
   return (
