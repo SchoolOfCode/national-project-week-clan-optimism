@@ -1,9 +1,9 @@
 import query from "../index.js";
 
-async function selectData() {
+export default async function selectData() {
     const data = await query('SELECT * FROM events;');
     
-    console.log(data);
+    return data;
 }
 
 selectData();
