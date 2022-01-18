@@ -6,4 +6,4 @@ export default async function selectData() {
     return data;
 }
 
-selectData();
+console.log(selectData());
