@@ -1,7 +1,4 @@
 .body {
   background-color: lightgray;
-}
-
-.body > * {
-  padding: 10px;
+  align-items: center;
 }
