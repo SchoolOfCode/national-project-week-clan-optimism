@@ -1,5 +1,5 @@
 import pg from "pg";
-import { database } from "pg/lib/defaults";
+// import { database } from "pg/lib/defaults";
 
 const env = process.env;
 
@@ -9,6 +9,7 @@ const pool = new pg.Pool({
   database: env.PG_DATABSE,
   password: env.PG_PASSWORD,
   port: env.PG_PORT,
+  ssl: { rejectUnauthorized: false }
 });
 
 export default function query(text, params) {

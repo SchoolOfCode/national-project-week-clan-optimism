@@ -8,3 +8,5 @@ const dummyData = [
     category: "Class Schedule",
   },
 ];
+
+export default dummyData;
