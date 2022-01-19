@@ -45,4 +45,29 @@ async function createEvent(req, res) {
   });
 }
 
-export { getAllEvents, getUpcomingEvents, createEvent };
+// will delete an event by id
+
+async function deleteEvent(req, res) {
+  const data = await query(`DELETE FROM events WHERE id = $1`, [
+    Number(req.params.id),
+  ]);
+  res.json({
+    success: true,
+    message: `event removed`,
+  });
+}
+
+// will get an event by id
+
+async function getEvent(req, res) {
+  const data = await query(`SELECT * FROM events WHERE id = $1`, [
+    Number(req.params.id),
+  ]);
+  res.json({
+    success: true,
+    message: `found event`,
+    payload: data.rows,
+  });
+}
+
+export { getAllEvents, getUpcomingEvents, createEvent, deleteEvent, getEvent };
