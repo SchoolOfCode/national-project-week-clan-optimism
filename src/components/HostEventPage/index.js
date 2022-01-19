@@ -1,6 +1,6 @@
 import React from "react";
 import HostEventForm from "../HostEventForm";
-import Navbar from "../NavBar";
+import Navbar from "../X";
 
 export default function HostEventPage() {
   return (

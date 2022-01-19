@@ -2,7 +2,7 @@ import React from "react";
 
 import DateAndTime from "../DateAndTime";
 import MyCalendar from "../MyCalendar";
-import Navbar from "../NavBar";
+import Navbar from "../X";
 import "./mainContent.css";
 
 export default function MainContent() {

@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "../NavBar";
+import Navbar from "../X";
 import MainContent from "../MainContent";
 import { Routes, Route, Link } from "react-router-dom";
 import HostEventPage from "../HostEventPage";
