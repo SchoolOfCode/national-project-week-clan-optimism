@@ -27,4 +27,22 @@ async function getUpcomingEvents(req, res) {
 
 // will create en event
 
-export { getAllEvents, getUpcomingEvents };
+async function createEvent(req, res) {
+  const data = await query(
+    "INSERT INTO events (event_name, event_description, event_date, event_start, event_duration, event_category) VALUES ($1, $2, $3, $4, $5, $6); ",
+    [
+      req.body.event_name,
+      req.body.event_description,
+      req.body.event_date,
+      req.body.event_start,
+      req.body.event_duration,
+      req.body.event_category,
+    ]
+  );
+  res.json({
+    success: true,
+    message: "event added",
+  });
+}
+
+export { getAllEvents, getUpcomingEvents, createEvent };
