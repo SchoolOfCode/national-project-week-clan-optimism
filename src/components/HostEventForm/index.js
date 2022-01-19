@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
+import DeleteDataButton from "../DeleteDataButton";
 export default function HostEventForm() {
   const [event, setEvent] = useState({});
+
   useEffect(() => {
-    fetch("localhost:5000/api/v1/events/host-event", {
+    fetch("http://localhost:5500/api/v1/events/host-event", {
       method: "POST",
-      body: event,
+      body: JSON.stringify(event),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
   }, [event]);
+
   function diff(eventStartTime, eventEndTime) {
     eventStartTime = eventStartTime.split(":");
     eventEndTime = eventEndTime.split(":");
@@ -32,6 +38,7 @@ export default function HostEventForm() {
       minutes
     );
   }
+
   function handleSubmit(e) {
     e.preventDefault();
     const newEvent = {
@@ -45,6 +52,7 @@ export default function HostEventForm() {
     setEvent(newEvent);
     console.log(newEvent);
   }
+
   return (
     <section>
       <form
@@ -127,6 +135,7 @@ export default function HostEventForm() {
         </select>
         <button type="submit">Create Event</button>
       </form>
+      <DeleteDataButton eventid={"21"} />
     </section>
   );
 }

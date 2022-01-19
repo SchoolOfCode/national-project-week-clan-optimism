@@ -48,7 +48,7 @@ async function createEvent(req, res) {
 // will delete an event by id
 
 async function deleteEvent(req, res) {
-  const data = await query(`DELETE FROM events WHERE id = $1`, [
+  const data = await query(`DELETE FROM events WHERE id = $1;`, [
     Number(req.params.id),
   ]);
   res.json({
@@ -60,7 +60,7 @@ async function deleteEvent(req, res) {
 // will get an event by id
 
 async function getEvent(req, res) {
-  const data = await query(`SELECT * FROM events WHERE id = $1`, [
+  const data = await query(`SELECT * FROM events WHERE id = $1;`, [
     Number(req.params.id),
   ]);
   res.json({
@@ -71,17 +71,25 @@ async function getEvent(req, res) {
 }
 
 async function updateEvent(req, res) {
-   const data = await query(`UPDATE events SET event_description = $1 WHERE id = $2 RETURNING *;`, 
-   [
-      req.body.event_description, Number(req.params.id)
-   ]
-   );
-   res.json({
-      success: true,
-      message: `event updated`,
-      payload: data.rows,
-   });
+  const data = await query(
+    `UPDATE events SET event_description = $1 WHERE id = $2 RETURNING *;`,
+    [req.body.event_description, Number(req.params.id)]
+  );
+
+  console.log(req.body.event_description);
+
+  res.json({
+    success: true,
+    message: `event updated`,
+    payload: data.rows,
+  });
 }
 
-
-export { getAllEvents, getUpcomingEvents, createEvent, deleteEvent, getEvent, updateEvent };
+export {
+  getAllEvents,
+  getUpcomingEvents,
+  createEvent,
+  deleteEvent,
+  getEvent,
+  updateEvent,
+};
