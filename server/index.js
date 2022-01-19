@@ -18,6 +18,6 @@ app.use("/api/v1/events", eventRoutes);
 // app.delete('/api/v1/tasks/:id')  - delete task
 // // app.post('/api/v1/events')        - create a new events
 
-const PORT = 3001;
+const PORT = 5000;
 
 app.listen(PORT, console.log(`server is listening on port ${PORT}...`));
