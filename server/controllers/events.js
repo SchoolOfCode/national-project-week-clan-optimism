@@ -71,6 +71,7 @@ async function getEvent(req, res) {
 }
 
 async function updateEvent(req, res) {
+  console.log("somethign happeed");
   const data = await query(
     `UPDATE events SET event_description = $1 WHERE id = $2 RETURNING *;`,
     [req.body.event_description, Number(req.params.id)]
