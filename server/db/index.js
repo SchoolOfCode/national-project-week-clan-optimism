@@ -1,5 +1,4 @@
 import pg from "pg";
-// import { database } from "pg/lib/defaults";
 
 const env = process.env;
 

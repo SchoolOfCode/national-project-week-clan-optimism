@@ -1,14 +1,11 @@
 import selectData from "../db/scripts/selectData.js"
 
-
 export const getAllEvents = async (req, res) => {
-   const events = await selectData();
-   res.json({
-      success: true, 
-      message: "all events",
-      payload: events
-   }
+  const events = await selectData();
 
-   );
-   //res.send("using api route")
+  res.json({
+    success: true, 
+    message: "all events",
+    payload: events
+  });
 }
