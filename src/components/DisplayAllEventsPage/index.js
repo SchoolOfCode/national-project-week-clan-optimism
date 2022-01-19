@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import "./DisplayAllEventsPage.css";
 
 /*create 2-4 cards to display all events available(1 event per card)
@@ -12,32 +12,47 @@ import "./DisplayAllEventsPage.css";
 function DisplayAllEventsPage(){
     const [events, setEvents] = useState({});
 
-    return (<div>    
-    <h1>Optimistic Events</h1>
-    <div className='flex-container'>
-    <div className='card'> 
-        <h3>Event name</h3> 
-        <p>Time  Duration</p> 
-        <p>Category</p> 
-        <p>Description</p> 
-    </div>
+    return (
+    <div>    
+        <h1>Optimistic Events</h1>
+        <div className='flex-container'>
+            <div className='card'> 
+                <h2>Event name</h2> 
+                <p className='time-text'>Time  Duration</p> 
+                <p className='category-text'>Category</p> 
+                <p>Description</p> 
+            </div>
 
-    <div className='card'> 
-        <h3>Event name</h3> 
-        <p>Time  Duration</p> 
-        <p>Category</p> 
-        <p>Description</p> 
-    </div>
+            <div className='card'> 
+                <h2>Event name</h2> 
+                <p className='time-text'>Time  Duration</p> 
+                <p className='category-text'>Category</p> 
+                <p>Description</p> 
+            </div>
 
-    <div className='card'> 
-        <h3>Event name</h3> 
-        <p>Time  Duration</p> 
-        <p>Category</p> 
-        <p>Description</p> 
-    </div>
+            <div className='card'> 
+                <h2>Event name</h2> 
+                <p className='time-text'>Time  Duration</p> 
+                <p className='category-text'>Category</p> 
+                <p>Description</p> 
+            </div>
 
+            <div className='card'> 
+                <h2>Event name</h2> 
+                <p className='time-text'>Time  Duration</p> 
+                <p className='category-text'>Category</p> 
+                <p>Description</p> 
+            </div>
+
+            <div className='card'> 
+                <h2>Event name</h2> 
+                <p className='time-text'>Time  Duration</p> 
+                <p className='category-text'>Category</p> 
+                <p>Description</p> 
+            </div>
+        </div>
     </div>
-    </div>
-        );
+    );
 }
+
 export default DisplayAllEventsPage;
