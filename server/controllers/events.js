@@ -70,4 +70,18 @@ async function getEvent(req, res) {
   });
 }
 
-export { getAllEvents, getUpcomingEvents, createEvent, deleteEvent, getEvent };
+async function updateEvent(req, res) {
+   const data = await query(`UPDATE events SET event_description = $1 WHERE id = $2 RETURNING *;`, 
+   [
+      req.body.event_description, Number(req.params.id)
+   ]
+   );
+   res.json({
+      success: true,
+      message: `event updated`,
+      payload: data.rows,
+   });
+}
+
+
+export { getAllEvents, getUpcomingEvents, createEvent, deleteEvent, getEvent, updateEvent };
