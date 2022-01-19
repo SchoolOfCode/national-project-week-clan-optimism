@@ -2,14 +2,10 @@
   "name": "national-project-week-clan-optimism",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "dotenv": "^14.2.0",
-    "express": "^4.17.2",
-    "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-calendar": "^3.6.0",
     "react-dom": "^17.0.2",
@@ -21,10 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-server": "node -r dotenv/config ./server/index.js",
-    "createtable": "node -r dotenv/config ./server/db/scripts/createEventTable.js",
-    "insertdata": "node -r dotenv/config ./server/db/scripts/populateEventTable.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

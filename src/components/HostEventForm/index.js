@@ -1,9 +1,57 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 export default function HostEventForm() {
+  const [event, setEvent] = useState({});
+  useEffect(() => {
+    fetch("localhost:5000/api/v1/events/host-event", {
+      method: "POST",
+      body: event,
+    });
+  }, [event]);
+  function diff(eventStartTime, eventEndTime) {
+    eventStartTime = eventStartTime.split(":");
+    eventEndTime = eventEndTime.split(":");
+    var eventStartTimeDate = new Date(
+      0,
+      0,
+      0,
+      eventStartTime[0],
+      eventStartTime[1],
+      0
+    );
+    var endDate = new Date(0, 0, 0, eventEndTime[0], eventEndTime[1], 0);
+    var diff = endDate.getTime() - eventStartTimeDate.getTime();
+    var hours = Math.floor(diff / 1000 / 60 / 60);
+    diff -= hours * 1000 * 60 * 60;
+    var minutes = Math.floor(diff / 1000 / 60);
+    if (hours < 0) hours = hours + 24;
+    return (
+      (hours <= 9 ? "0" : "") +
+      hours +
+      ":" +
+      (minutes <= 9 ? "0" : "") +
+      minutes
+    );
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newEvent = {
+      event_name: e.target[0].value,
+      event_description: e.target[2].value,
+      event_date: e.target[1].value,
+      event_start: e.target[3].value,
+      event_duration: diff(e.target[3].value, e.target[4].value),
+      event_category: e.target[5].value,
+    };
+    setEvent(newEvent);
+    console.log(newEvent);
+  }
   return (
     <section>
-      <form>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <input id="event-title" type="text" placeholder="event title..." />
         <input id="event-date" type="date" />
         <input
@@ -14,10 +62,10 @@ export default function HostEventForm() {
         <select
           name="start-time"
           type="list"
-          required="true"
+          required={true}
           label="start-time"
           description="start-time"
-          class="input-medium validate-time"
+          className="input-medium validate-time"
         >
           <option value="07:00:00">07:00</option>
           <option value="07:30:00">07:30</option>
@@ -29,9 +77,7 @@ export default function HostEventForm() {
           <option value="10:30:00">10:30</option>
           <option value="11:00:00">11:00</option>
           <option value="11:30:00">11:30</option>
-          <option value="12:00:00" selected>
-            12:00
-          </option>
+          <option value="12:00:00">12:00</option>
           <option value="12:30:00">12:30</option>
           <option value="13:00:00">13:00</option>
           <option value="13:30:00">13:30</option>
@@ -46,10 +92,10 @@ export default function HostEventForm() {
         <select
           name="end-time"
           type="list"
-          required="true"
+          required={true}
           label="end-time"
           description="end-time"
-          class="input-medium validate-time"
+          className="input-medium validate-time"
         >
           <option value="07:00:00">07:00</option>
           <option value="07:30:00">07:30</option>
@@ -61,9 +107,7 @@ export default function HostEventForm() {
           <option value="10:30:00">10:30</option>
           <option value="11:00:00">11:00</option>
           <option value="11:30:00">11:30</option>
-          <option value="12:00:00" selected>
-            12:00
-          </option>
+          <option value="12:00:00">12:00</option>
           <option value="12:30:00">12:30</option>
           <option value="13:00:00">13:00</option>
           <option value="13:30:00">13:30</option>
@@ -73,9 +117,7 @@ export default function HostEventForm() {
           <option value="15:30:00">15:30</option>
           <option value="16:00:00">16:00</option>
           <option value="16:30:00">16:30</option>
-          <option value="17:00:00" selected>
-            17:00
-          </option>
+          <option value="17:00:00">17:00</option>
         </select>
         <select>
           <option value="Class Schedule">Class Schedule</option>
@@ -83,6 +125,7 @@ export default function HostEventForm() {
           <option value="Feedback">Feedback</option>
           <option value="Project">Project</option>
         </select>
+        <button type="submit">Create Event</button>
       </form>
     </section>
   );

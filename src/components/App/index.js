@@ -1,10 +1,7 @@
 import "./App.css";
-import Navbar from "../Navbar";
-import MainContent from "../MainContent";
 import { Routes, Route, Link } from "react-router-dom";
 import HostEventPage from "../HostEventPage";
 import HomePage from "../HomePage";
-
 function App() {
   return (
     <>
@@ -15,5 +12,4 @@ function App() {
     </>
   );
 }
-
 export default App;
