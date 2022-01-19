@@ -1,9 +1,10 @@
 import express from "express";
-
-import { getAllEvents } from "../controllers/events.js";
+import { getAllEvents, getUpcomingEvents } from "../controllers/events.js";
 
 const router = express.Router();
+
 router.route("/").get(getAllEvents);
-// router.route("/:count").get(getUpcomingEvents);
+router.route("/upcomingevents/:count").get(getUpcomingEvents);
+
 
 export default router;
