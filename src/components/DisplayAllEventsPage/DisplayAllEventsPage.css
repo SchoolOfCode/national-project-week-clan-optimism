@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgb(240, 224, 42);
+    border: solid 1px red;
+    border-radius: 5px;
+    width: 350px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.time-text {
+    font-style: italic;
+}
+
+.category-text {
+    font-weight: bold;
+}
