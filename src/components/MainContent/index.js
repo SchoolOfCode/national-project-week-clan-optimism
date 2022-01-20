@@ -14,11 +14,12 @@ export default function MainContent() {
       <section className="calendar-placement">
         <MyCalendar />
       </section>
-      <h4>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printe
-      </h4>
+      <p>
+        The reminder/calendar solution you will absolutely love. Bootcamp is no
+        walk in the park. So let’s make it a little easier for you. Want to
+        create an event to get together with your fellow bootcampers? Or forgot
+        when code club is? You need the Optimistic event reminder!
+      </p>
     </section>
   );
 }

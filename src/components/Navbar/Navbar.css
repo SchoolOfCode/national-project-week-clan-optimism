@@ -4,14 +4,14 @@
 
 nav > p {
   display: inline;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 600;
   font-size: 1.3em;
   letter-spacing: 0.7px;
 }
 
 nav {
-  background-color: #ea4335;
+  background-color: #e95a4d;
   display: flex;
   align-items: center;
   justify-content: space-between;
