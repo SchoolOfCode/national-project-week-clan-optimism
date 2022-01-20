@@ -1,9 +1,7 @@
 import query from "../index.js";
 
 export default async function selectData() {
-    const data = await query('SELECT * FROM events;');
-    
-    return data;
-}
+  const data = await query("SELECT * FROM events ORDER BY id ASC;");
 
-console.log(selectData());
+  return data;
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DisplayAllEventsPage.css";
+import EditDataButton from "../EditDataButton/index";
+import DeleteDataButton from "../DeleteDataButton/index";
 
 /*create 2-4 cards to display all events available(1 event per card)
 -to get event, we need a fetch to our backend api 
@@ -23,24 +25,26 @@ function DisplayAllEventsPage() {
 
     console.log(response.payload.rows);
     setEvents(response.payload.rows);
-  }  
+  }
 
   return (
     <div>
       <h1>Optimistic Events</h1>
       <div className="flex-container">
-        {
-          events.map((event) => {
-            return(
-              <div className="card">
-                <h2>{event.event_name}</h2>
-                <p className="time-text">{event.event_date}, {event.event_start} ({event.event_duration})</p>
-                <p className="category-text">{event.event_category}</p>
-                <p>{event.event_description}</p>
-              </div>
-            )
-          })
-        }
+        {events.map((event) => {
+          return (
+            <div className="card" key={event.id}>
+              <h2>{event.event_name}</h2>
+              <p className="time-text">
+                {event.event_date}, {event.event_start} ({event.event_duration})
+              </p>
+              <p className="category-text">{event.event_category}</p>
+              <p>{event.event_description}</p>
+              <EditDataButton eventid={event.id} />
+              <DeleteDataButton eventid={event.id} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
