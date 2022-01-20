@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DisplayAllEventsPage.css";
 
 /*create 2-4 cards to display all events available(1 event per card)
