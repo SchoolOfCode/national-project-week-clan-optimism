@@ -26,7 +26,7 @@ export default function EditDataButton({ eventid }) {
       }}
     >
       <input placeholder="edit event description..." />
-      <button className="edit-event-button" type="submit" value={eventid}>
+      <button className="edit-data-button" type="submit" value={eventid}>
         Edit
       </button>
     </form>

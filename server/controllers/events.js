@@ -14,7 +14,7 @@ async function getAllEvents(req, res) {
 // will have the rest of get queries here, use query() for sending SQL to db
 
 async function getUpcomingEvents(req, res) {
-  const data = await query("SELECT * FROM events LIMIT $1;", [
+  const data = await query("SELECT * FROM events ORDER BY id ASC LIMIT $1;", [
     Number(req.params.count),
   ]);
   console.log(req.params.count);

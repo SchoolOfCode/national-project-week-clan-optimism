@@ -23,7 +23,6 @@ function DisplayAllEventsPage() {
     let res = await fetch("http://localhost:5500/api/v1/events/");
     let response = await res.json();
 
-    console.log(response.payload.rows);
     setEvents(response.payload.rows);
   }
 
