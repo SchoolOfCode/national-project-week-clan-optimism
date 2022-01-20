@@ -6,7 +6,7 @@ export default function DeleteDataButton({ eventid }) {
     fetch("http://localhost:5500/api/v1/events/" + e.target.value, {
       method: "DELETE",
     });
-    console.log("delete req passed").then(console.log("delete done"));
+    console.log("delete req passed");
   }
 
   return (
