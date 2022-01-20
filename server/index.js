@@ -20,6 +20,6 @@ app.use("/api/v1/events", eventRoutes);
 // app.delete('/api/v1/tasks/:id')  - delete task
 // // app.post('/api/v1/events')        - create a new events
 
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 app.listen(PORT, console.log(`server is listening on port ${PORT}...`));
