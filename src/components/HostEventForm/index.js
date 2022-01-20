@@ -131,7 +131,7 @@ export default function HostEventForm() {
         </select>
         <button type="submit">Create Event</button>
       </form>
-      <DeleteDataButton eventid={"21"} />
+      <DeleteDataButton eventid={"31"} />
       <EditDataButton eventid={"28"} />
     </section>
   );

@@ -6,7 +6,7 @@ import "./DisplayAllEventsPage.css";
 -import usestate as a way to store details
 -include event name, time, category, description, duration
 -as further development, a link can connect each event to its own page 
-
+-possibly have useEffect to fetch all events on load and stash them into `events` state
 */
 
 function DisplayAllEventsPage(){
