@@ -9,7 +9,7 @@ import "./DisplayAllEventsPage.css";
 */
 
 function DisplayAllEventsPage() {
-  const [events, setEvents] = useState();
+  const [events, setEvents] = useState([]);
 
   // want all events to fetch from api on load and store in events state
   useEffect(() => {
@@ -23,48 +23,24 @@ function DisplayAllEventsPage() {
 
     console.log(response.payload.rows);
     setEvents(response.payload.rows);
-  }
-
-  
+  }  
 
   return (
     <div>
       <h1>Optimistic Events</h1>
       <div className="flex-container">
-        <div className="card">
-          <h2>Event name</h2>
-          <p className="time-text">Time Duration</p>
-          <p className="category-text">Category</p>
-          <p>Description</p>
-        </div>
-
-        <div className="card">
-          <h2>Event name</h2>
-          <p className="time-text">Time Duration</p>
-          <p className="category-text">Category</p>
-          <p>Description</p>
-        </div>
-
-        <div className="card">
-          <h2>Event name</h2>
-          <p className="time-text">Time Duration</p>
-          <p className="category-text">Category</p>
-          <p>Description</p>
-        </div>
-
-        <div className="card">
-          <h2>Event name</h2>
-          <p className="time-text">Time Duration</p>
-          <p className="category-text">Category</p>
-          <p>Description</p>
-        </div>
-
-        <div className="card">
-          <h2>Event name</h2>
-          <p className="time-text">Time Duration</p>
-          <p className="category-text">Category</p>
-          <p>Description</p>
-        </div>
+        {
+          events.map((event) => {
+            return(
+              <div className="card">
+                <h2>{event.event_name}</h2>
+                <p className="time-text">{event.event_date}, {event.event_start} ({event.event_duration})</p>
+                <p className="category-text">{event.event_category}</p>
+                <p>{event.event_description}</p>
+              </div>
+            )
+          })
+        }
       </div>
     </div>
   );
