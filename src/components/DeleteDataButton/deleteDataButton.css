@@ -15,7 +15,7 @@
     Arial, sans-serif;
   font-size: 1rem;
   height: 2.5em;
-  width: 8em;
+  width: 7em;
   justify-content: center;
   line-height: 1.5;
   padding: calc(0.5em - 1px) 1em;
@@ -26,10 +26,11 @@
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
-  left: 10px;
+
   margin-bottom: 10px;
 }
 
-.delete-data-button:hover {
+.edit-data-button:hover {
   background-color: #ea4335;
+  color: white;
 }

@@ -9,9 +9,7 @@ import "./mainContent.css";
 export default function MainContent() {
   return (
     <section className="main-display">
-      <h1>Clan Optimist's Event App</h1>
-
-      <h2>Upcoming events</h2>
+      <h2>Clan Optimist's upcoming...</h2>
       <div id="upcoming-event">
         <DisplayUpcomingEvents count="1" />
       </div>
@@ -20,10 +18,14 @@ export default function MainContent() {
       <section className="calendar-placement">
         <MyCalendar />
       </section>
-      <p>
+      {/* <p>
         Bootcamp is no walk in the park. So let’s make it a little easier for
         you. Want to create an event to get together with your fellow
         bootcampers? Forgot when code club is? Let's help you!
+      </p> */}
+      <p>
+        Optimist's Flexible, Social and Professional event manager. Never worry
+        about missing a deadline.{" "}
       </p>
     </section>
   );
