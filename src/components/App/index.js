@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HostEventPage from "../HostEventPage";
 import HomePage from "../HomePage";
 import DisplayAllEventsPage from "../DisplayAllEventsPage";
