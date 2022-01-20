@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/host-event" element={<HostEventPage />} />
-        <Route path="/display-all-events" element={<DisplayAllEventsPage />} />
+        <Route path="/all-events" element={<DisplayAllEventsPage />} />
       </Routes>
     </>
   );

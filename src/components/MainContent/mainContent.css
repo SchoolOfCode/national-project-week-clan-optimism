@@ -5,6 +5,7 @@
 
 .main-display {
   text-align: center;
+  align-items: center;
 }
 
 .main-display h1 {
@@ -19,4 +20,8 @@
 
 .main-display p {
   padding: 10px;
+}
+
+#upcoming-event {
+  margin-left: 60px;
 }
