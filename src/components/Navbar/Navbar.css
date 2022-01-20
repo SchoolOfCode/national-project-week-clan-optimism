@@ -11,7 +11,7 @@ nav > p {
 }
 
 nav {
-  background-color: #e95a4d;
+  background-color: #d11403;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,10 +19,22 @@ nav {
 }
 
 .logo {
-  width: 10%;
+  width: 100px;
+  height: 100px;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
 }
+
+.menu-icon{
+  width: 25px;
+  height: 25px;
+}
+
+.default-user{
+  width: 25px;
+  height: 25px;
+}
+
