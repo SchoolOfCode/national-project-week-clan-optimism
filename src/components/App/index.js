@@ -1,15 +1,15 @@
 import "./App.css";
-import Navbar from "../Navbar/index";
-import MainContent from "../MainContent";
-
+import { Routes, Route, Link } from "react-router-dom";
+import HostEventPage from "../HostEventPage";
+import HomePage from "../HomePage";
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="App">Welcome!</div>
-      <MainContent />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/host-event" element={<HostEventPage />} />
+      </Routes>
     </>
   );
 }
-
 export default App;
