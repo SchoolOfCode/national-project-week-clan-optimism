@@ -5,7 +5,7 @@ export default function EditDataButton({ eventid }) {
     e.preventDefault();
 
     const editObj = {
-      event_description: e.target[0].value,
+      event_description: { event_description: e.target[0].value },
       id: e.target[1].value,
     };
 
@@ -16,6 +16,7 @@ export default function EditDataButton({ eventid }) {
       },
       body: JSON.stringify(editObj.event_description),
     });
+    console.log(editObj.event_description);
   }
 
   return (
