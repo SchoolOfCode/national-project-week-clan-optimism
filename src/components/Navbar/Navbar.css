@@ -19,8 +19,8 @@ nav {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 50px;
 }
 
 .logo-container {
@@ -29,12 +29,12 @@ nav {
 }
 
 .menu-icon{
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
 }
 
 .default-user{
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
 }
 
