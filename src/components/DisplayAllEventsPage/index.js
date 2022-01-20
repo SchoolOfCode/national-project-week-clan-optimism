@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DisplayAllEventsPage.css";
 
 /*create 2-4 cards to display all events available(1 event per card)
 -to get event, we need a fetch to our backend api 
 -import usestate as a way to store details
 -include event name, time, category, description, duration
--as further development, a link can connect each event to its own page 
 -possibly have useEffect to fetch all events on load and stash them into `events` state
 */
 
 function DisplayAllEventsPage() {
-  // const [events, setEvents] = useState({});
+  const [events, setEvents] = useState();
+
+  // want all events to fetch from api on load and store in events state
+  useEffect(() => {
+    getAllEvents();
+    // console.log("events page loaded");
+  }, []);
+
+  async function getAllEvents() {
+    let res = await fetch("http://localhost:5500/api/v1/events/");
+    let response = await res.json();
+
+    console.log(response.payload.rows);
+    setEvents(response.payload.rows);
+  }
+
+  
 
   return (
     <div>
