@@ -16,4 +16,5 @@ router.route("/upcomingevents/:count").get(getUpcomingEvents);
 router.route("/:id").delete(deleteEvent).get(getEvent).patch(updateEvent);
 
 
+
 export default router;
