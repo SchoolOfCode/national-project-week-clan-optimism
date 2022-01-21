@@ -2,9 +2,10 @@ import React from "react";
 import MainContent from "../MainContent";
 import Navbar from "../Navbar";
 
+import "./homepage.css";
 export default function HomePage() {
   return (
-    <main>
+    <main className="homepage-body">
       <Navbar />
       <MainContent />
     </main>

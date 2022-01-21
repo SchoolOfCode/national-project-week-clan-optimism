@@ -1,6 +1,5 @@
 import React from "react";
-import DeleteDataButton from "../DeleteDataButton";
-import EditDataButton from "../EditDataButton";
+import "./hostEventForm.css";
 
 export default function HostEventForm() {
   function diff(eventStartTime, eventEndTime) {
@@ -50,89 +49,114 @@ export default function HostEventForm() {
   }
 
   return (
-    <section>
+    <section className="form-container">
       <form
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
-        <input id="event-title" type="text" placeholder="event title..." />
-        <input id="event-date" type="date" />
+        <span id="span-span">
+          <input id="event-title" type="text" placeholder="event title..." />
+          <input id="event-date" type="date" />
+        </span>
+
+        <br />
         <input
           id="event-desc"
           type="text"
           placeholder="event description... "
         />
-        <select
-          name="start-time"
-          type="list"
-          required={true}
-          label="start-time"
-          description="start-time"
-          className="input-medium validate-time"
-        >
-          <option value="07:00:00">07:00</option>
-          <option value="07:30:00">07:30</option>
-          <option value="08:00:00">08:00</option>
-          <option value="08:30:00">08:30</option>
-          <option value="09:00:00">09:00</option>
-          <option value="09:30:00">09:30</option>
-          <option value="10:00:00">10:00</option>
-          <option value="10:30:00">10:30</option>
-          <option value="11:00:00">11:00</option>
-          <option value="11:30:00">11:30</option>
-          <option value="12:00:00">12:00</option>
-          <option value="12:30:00">12:30</option>
-          <option value="13:00:00">13:00</option>
-          <option value="13:30:00">13:30</option>
-          <option value="14:00:00">14:00</option>
-          <option value="14:30:00">14:30</option>
-          <option value="15:00:00">15:00</option>
-          <option value="15:30:00">15:30</option>
-          <option value="16:00:00">16:00</option>
-          <option value="16:30:00">16:30</option>
-          <option value="17:00:00">17:00</option>
-        </select>
-        <select
-          name="end-time"
-          type="list"
-          required={true}
-          label="end-time"
-          description="end-time"
-          className="input-medium validate-time"
-        >
-          <option value="07:00:00">07:00</option>
-          <option value="07:30:00">07:30</option>
-          <option value="08:00:00">08:00</option>
-          <option value="08:30:00">08:30</option>
-          <option value="09:00:00">09:00</option>
-          <option value="09:30:00">09:30</option>
-          <option value="10:00:00">10:00</option>
-          <option value="10:30:00">10:30</option>
-          <option value="11:00:00">11:00</option>
-          <option value="11:30:00">11:30</option>
-          <option value="12:00:00">12:00</option>
-          <option value="12:30:00">12:30</option>
-          <option value="13:00:00">13:00</option>
-          <option value="13:30:00">13:30</option>
-          <option value="14:00:00">14:00</option>
-          <option value="14:30:00">14:30</option>
-          <option value="15:00:00">15:00</option>
-          <option value="15:30:00">15:30</option>
-          <option value="16:00:00">16:00</option>
-          <option value="16:30:00">16:30</option>
-          <option value="17:00:00">17:00</option>
-        </select>
-        <select>
+        <br />
+        <label class="select" for="slct">
+          <select
+            id="slct"
+            required="required"
+            name="start-time"
+            type="list"
+            label="start-time"
+            description="start-time"
+            className="input-medium validate-time"
+          >
+            <option value="07:00:00">07:00 Start</option>
+            <option value="07:30:00">07:30 Start</option>
+            <option value="08:00:00">08:00 Start</option>
+            <option value="08:30:00">08:30 Start</option>
+            <option value="09:00:00">09:00 Start</option>
+            <option value="09:30:00">09:30 Start</option>
+            <option value="10:00:00">10:00 Start</option>
+            <option value="10:30:00">10:30 Start</option>
+            <option value="11:00:00">11:00 Start</option>
+            <option value="11:30:00">11:30 Start</option>
+            <option value="12:00:00">12:00 Start</option>
+            <option value="12:30:00">12:30 Start</option>
+            <option value="13:00:00">13:00 Start</option>
+            <option value="13:30:00">13:30 Start</option>
+            <option value="14:00:00">14:00 Start</option>
+            <option value="14:30:00">14:30 Start</option>
+            <option value="15:00:00">15:00 Start</option>
+            <option value="15:30:00">15:30 Start</option>
+            <option value="16:00:00">16:00 Start</option>
+            <option value="16:30:00">16:30 Start</option>
+            <option value="17:00:00">17:00 Start</option>
+          </select>
+        </label>
+
+        <svg class="sprites">
+          <symbol id="select-arrow-down" viewbox="0 0 10 6">
+            <polyline points="1 1 5 5 9 1"></polyline>
+          </symbol>
+        </svg>
+        <label class="select" for="slct">
+          <select
+            id="slct"
+            required="required"
+            name="end-time"
+            type="list"
+            label="end-time"
+            description="end-time"
+            className="input-medium validate-time"
+          >
+            <option value="07:00:00">07:00 End</option>
+            <option value="07:30:00">07:30 End</option>
+            <option value="08:00:00">08:00 End</option>
+            <option value="08:30:00">08:30 End</option>
+            <option value="09:00:00">09:00 End</option>
+            <option value="09:30:00">09:30 End</option>
+            <option value="10:00:00">10:00 End</option>
+            <option value="10:30:00">10:30 End</option>
+            <option value="11:00:00">11:00 End</option>
+            <option value="11:30:00">11:30 End</option>
+            <option value="12:00:00">12:00 End</option>
+            <option value="12:30:00">12:30 End</option>
+            <option value="13:00:00">13:00 End</option>
+            <option value="13:30:00">13:30 End</option>
+            <option value="14:00:00">14:00 End</option>
+            <option value="14:30:00">14:30 End</option>
+            <option value="15:00:00">15:00 End</option>
+            <option value="15:30:00">15:30 End</option>
+            <option value="16:00:00">16:00 End</option>
+            <option value="16:30:00">16:30 End</option>
+            <option value="17:00:00">17:00 End</option>
+          </select>
+        </label>
+
+        <svg class="sprites">
+          <symbol id="select-arrow-down" viewbox="0 0 10 6">
+            <polyline points="1 1 5 5 9 1"></polyline>
+          </symbol>
+        </svg>
+        <br />
+        <select id="event-category">
           <option value="Class Schedule">Class Schedule</option>
           <option value="Guest Speaker">Guest Speaker</option>
           <option value="Feedback">Feedback</option>
           <option value="Project">Project</option>
         </select>
-        <button type="submit">Create Event</button>
+        <br />
+        <button type="submit" className="data-button">
+          Create Event
+        </button>
       </form>
-      <DeleteDataButton eventid={"31"} />
-      <EditDataButton eventid={"28"} />
     </section>
   );
 }
