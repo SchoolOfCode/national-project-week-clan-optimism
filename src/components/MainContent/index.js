@@ -5,13 +5,16 @@ import MyCalendar from "../MyCalendar";
 import DisplayUpcomingEvents from "../DisplayUpcomingEvents";
 
 import "./mainContent.css";
+import { Link } from "react-router-dom";
 
 export default function MainContent() {
   return (
     <section className="main-display">
       <h2>Clan Optimist's upcoming...</h2>
       <div id="upcoming-event">
-        <DisplayUpcomingEvents count="1" />
+        <Link to="all-events">
+          <DisplayUpcomingEvents count="1" />
+        </Link>
       </div>
 
       <DateAndTime />

@@ -7,6 +7,7 @@ export default function HostEventPage() {
   return (
     <div className="page-body">
       <Navbar />
+      <h1>Host an event</h1>
       <HostEventForm />
     </div>
   );
