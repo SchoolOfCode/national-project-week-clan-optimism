@@ -2,8 +2,8 @@ import React from "react";
 import "./deleteDataButton.css";
 
 export default function DeleteDataButton({ eventid }) {
-  function handleOnClick(e) {
-    fetch("http://localhost:5500/api/v1/events/" + e.target.value, {
+  async function handleOnClick(e) {
+    await fetch("http://localhost:5500/api/v1/events/" + e.target.value, {
       method: "DELETE",
     });
     console.log("delete req passed");

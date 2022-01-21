@@ -18,7 +18,7 @@ function DisplayAllEventsPage() {
   useEffect(() => {
     getAllEvents();
     // console.log("events page loaded");
-  }, []);
+  }, [events]);
 
   async function getAllEvents() {
     let res = await fetch("http://localhost:5500/api/v1/events/");
