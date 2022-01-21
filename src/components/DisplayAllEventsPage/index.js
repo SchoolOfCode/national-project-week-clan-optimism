@@ -46,7 +46,7 @@ function DisplayAllEventsPage() {
 
                 <span className="span-span">
                   <DeleteDataButton eventid={event.id} />
-                  <EditDataButton eventid={event.id} />
+                  <EditDataButton event_id={event.id} event_description={event.event_description}/>
                 </span>
               </div>
             );
