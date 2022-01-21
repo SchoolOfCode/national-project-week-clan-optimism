@@ -3,3 +3,7 @@
   width: 100%;
   background-image: url("../Image/backgound-img-2.png");
 }
+
+.page-body h1 {
+  text-align: center;
+}

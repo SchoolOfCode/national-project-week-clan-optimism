@@ -30,8 +30,8 @@ function DisplayAllEventsPage() {
   return (
     <div className="all-events-body">
       <Navbar />
-      <div>
-        <h1>Optimistic Events</h1>
+      <div style={{ textAlign: "center" }}>
+        <h1>All Events</h1>
         <div className="flex-container">
           {events.map((event) => {
             return (

@@ -23,18 +23,28 @@ nav {
   height: 50px;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 .logo-container {
   display: flex;
   justify-content: center;
 }
 
-.menu-icon{
+.menu-icon {
+  width: 40px;
+  height: 40px;
+}
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+.default-user {
   width: 40px;
   height: 40px;
 }
 
-.default-user{
-  width: 40px;
-  height: 40px;
+.default-user:hover {
+  cursor: pointer;
 }
-
