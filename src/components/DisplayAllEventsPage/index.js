@@ -28,7 +28,7 @@ function DisplayAllEventsPage() {
   }
 
   return (
-    <>
+    <div className="all-events-body">
       <Navbar />
       <div>
         <h1>Optimistic Events</h1>
@@ -43,14 +43,17 @@ function DisplayAllEventsPage() {
                 </p>
                 <p className="category-text">{event.event_category}</p>
                 <p>{event.event_description}</p>
-                <EditDataButton eventid={event.id} />
-                <DeleteDataButton eventid={event.id} />
+
+                <span className="span-span">
+                  <DeleteDataButton eventid={event.id} />
+                  <EditDataButton eventid={event.id} />
+                </span>
               </div>
             );
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

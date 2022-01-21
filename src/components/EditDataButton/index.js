@@ -1,4 +1,5 @@
 import React from "react";
+import "./editDataButton.css";
 
 export default function EditDataButton({ eventid }) {
   function handleSubmit(e) {
@@ -25,9 +26,27 @@ export default function EditDataButton({ eventid }) {
         handleSubmit(e);
       }}
     >
-      <input placeholder="edit event description..." />
-      <button className="edit-data-button" type="submit" value={eventid}>
+      <button
+        type="button"
+        className="edit-data-button"
+        value={eventid}
+        onClick={() => {
+          const magic = document.getElementById("datainput");
+          const boom = document.getElementById("databutton");
+          magic.classList.toggle("edit-data");
+          boom.classList.toggle("edit-data");
+        }}
+      >
         Edit
+      </button>
+      <br />
+      <input
+        id="datainput"
+        className="edit-data"
+        placeholder="edit event description..."
+      />
+      <button id="databutton" className="edit-data" type="submit">
+        submit
       </button>
     </form>
   );

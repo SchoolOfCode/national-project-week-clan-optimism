@@ -1,3 +1,6 @@
+.all-events-body {
+  background-image: url("../Image/backgound-img-2.png");
+}
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -5,13 +8,14 @@
 }
 
 .card {
-  background-color: rgb(240, 224, 42);
-  border: solid 1px #d11403;
+  border: 1px solid #ee8c83;
+  background-color: white;
+  box-shadow: 0 1px 3px -2px #e27c73;
   border-radius: 5px;
-  width: 350px;
+  width: 380px;
   margin: 10px;
   padding: 10px;
-  padding-left: 40px;
+  text-align: center;
 }
 
 .time-text {
@@ -20,4 +24,9 @@
 
 .category-text {
   font-weight: bold;
+}
+
+.span-span {
+  display: flex;
+  justify-content: space-between;
 }
