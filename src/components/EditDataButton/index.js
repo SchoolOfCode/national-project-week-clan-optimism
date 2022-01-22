@@ -24,11 +24,11 @@ function EditDataButton(props) {
         <form onSubmit={handleSubmit}>
             <button type="button" className="edit-data-button" value={props.event_id} onClick={() => {
                 const editorDiv = document.querySelectorAll(`div[hideselector='${props.event_id}']`);
-                editorDiv[0].classList.toggle("edit-data");
+                editorDiv[0].classList.toggle("hidden");
                 }}
             >Edit</button>
             <br />
-            <div className="edit-data" hideselector={props.event_id}>
+            <div className="hidden" hideselector={props.event_id}>
                 <input id="datainput" type='text' onChange={handleChange} value={description} />
                 <button id="databutton" type='submit'>Submit</button>
             </div>
