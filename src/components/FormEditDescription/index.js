@@ -1,9 +1,17 @@
-import React, {useState} from 'react';
-import "./editDataButton.css";
+import React, {useState} from "react";
+import "./FormEditDescription.css";
 
-function EditDataButton(props) {
+function FormEditDescription(props) {
     const [description, setDescription] = useState(props.event_description);
-    const [isDescriptionInputHidden, setIsDescriptionInputHidden] = useState(true);
+    const [inputHidden, setInputHidden] = useState(true);
+
+    function toggleInput() {
+        setInputHidden(!inputHidden);
+    }
+    
+    function handleChange(event) {
+        setDescription(event.target.value);
+    }
 
     function handleSubmit(event) {
         fetch("http://localhost:5500/api/v1/events/" + props.event_id, {
@@ -16,19 +24,11 @@ function EditDataButton(props) {
         event.preventDefault();
     }
 
-    function handleChange(event) {
-        setDescription(event.target.value);
-    }
-
-    function handleEditButtonClick() {
-        setIsDescriptionInputHidden(!isDescriptionInputHidden);
-    }
-
     return(
         <form onSubmit={handleSubmit}>
-            <button type="button" className="edit-data-button" onClick={handleEditButtonClick}>Edit</button>
+            <button type="button" className="edit-data-button" onClick={toggleInput}>Edit</button>
             <br />
-            <div className={isDescriptionInputHidden ? "hidden" : ""}>
+            <div className={inputHidden ? "hidden" : ""}>
                 <input id="datainput" onChange={handleChange} value={description} />
                 <button type="submit" id="databutton">Submit</button>
             </div>
@@ -36,4 +36,4 @@ function EditDataButton(props) {
     );
 }
 
-export default EditDataButton;
+export default FormEditDescription;
