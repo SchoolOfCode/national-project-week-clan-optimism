@@ -3,9 +3,9 @@ import "./editDataButton.css";
 
 function EditDataButton(props) {
     const [description, setDescription] = useState(props.event_description);
+    const [isDescriptionInputHidden, setIsDescriptionInputHidden] = useState(true);
 
     function handleSubmit(event) {
-        // fetch('api url' + props.eventid), method: POST, with `description` in body
         fetch("http://localhost:5500/api/v1/events/" + props.event_id, {
             method: "PATCH",
             headers: {
@@ -20,17 +20,17 @@ function EditDataButton(props) {
         setDescription(event.target.value);
     }
 
+    function handleEditButtonClick() {
+        setIsDescriptionInputHidden(!isDescriptionInputHidden);
+    }
+
     return(
         <form onSubmit={handleSubmit}>
-            <button type="button" className="edit-data-button" value={props.event_id} onClick={() => {
-                const editorDiv = document.querySelectorAll(`div[hideselector='${props.event_id}']`);
-                editorDiv[0].classList.toggle("hidden");
-                }}
-            >Edit</button>
+            <button type="button" className="edit-data-button" onClick={handleEditButtonClick}>Edit</button>
             <br />
-            <div className="hidden" hideselector={props.event_id}>
-                <input id="datainput" type='text' onChange={handleChange} value={description} />
-                <button id="databutton" type='submit'>Submit</button>
+            <div className={isDescriptionInputHidden ? "hidden" : ""}>
+                <input id="datainput" onChange={handleChange} value={description} />
+                <button type="submit" id="databutton">Submit</button>
             </div>
         </form>
     );
