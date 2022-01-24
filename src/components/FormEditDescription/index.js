@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./FormEditDescription.css";
+import updateDescription from "../../services/EventApi";
 
 function FormEditDescription(props) {
     const [description, setDescription] = useState(props.event_description);
@@ -14,14 +15,8 @@ function FormEditDescription(props) {
     }
 
     function handleSubmit(event) {
-        fetch("http://localhost:5500/api/v1/events/" + props.event_id, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({event_description: description}),
-        });
         event.preventDefault();
+        updateDescription(props.event_id, description);
     }
 
     return(
