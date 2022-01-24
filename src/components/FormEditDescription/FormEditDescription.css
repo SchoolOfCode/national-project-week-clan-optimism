@@ -66,10 +66,6 @@
   margin-bottom: 10px;
 }
 
-.edit-data {
-  display: none;
-}
-
 #databutton:hover {
   background-color: #ea4335;
   color: white;

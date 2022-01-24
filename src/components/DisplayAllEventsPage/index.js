@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./DisplayAllEventsPage.css";
-import EditDataButton from "../EditDataButton/index";
+import FormEditDescription from "../FormEditDescription";
 import DeleteDataButton from "../DeleteDataButton/index";
 import Navbar from "../Navbar/index";
 
@@ -46,7 +46,7 @@ function DisplayAllEventsPage() {
 
                 <span className="span-span">
                   <DeleteDataButton eventid={event.id} />
-                  <EditDataButton event_id={event.id} event_description={event.event_description}/>
+                  <FormEditDescription event_id={event.id} event_description={event.event_description}/>
                 </span>
               </div>
             );
