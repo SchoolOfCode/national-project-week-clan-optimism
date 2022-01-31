@@ -11,7 +11,7 @@ import {
 import {
   getProfileHistory,
   deleteProfileHistory,
-} from "../controllers/profiles";
+} from "../controllers/profiles.js";
 
 const router = express.Router();
 
