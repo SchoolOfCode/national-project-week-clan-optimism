@@ -29,7 +29,6 @@ export default function HostEventForm() {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
     const newEvent = {
       event_name: e.target[0].value,
       event_description: e.target[2].value,

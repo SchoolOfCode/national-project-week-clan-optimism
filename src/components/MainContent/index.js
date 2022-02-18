@@ -11,6 +11,7 @@ export default function MainContent() {
   return (
     <section className="main-display">
       <h2>Clan Optimist's upcoming...</h2>
+      <h5>please view the website in mobile view 482x842px</h5>
       <div id="upcoming-event">
         <Link to="all-events">
           <DisplayUpcomingEvents count="1" />
